@@ -1,0 +1,2 @@
+imports:
+  - { resource: vendor/libaro-io/quality-tools/grumphp.yml }

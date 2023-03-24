@@ -1,0 +1,37 @@
+{
+    "name": "libaro-io/quality-tools",
+    "description": "Libaro quality :D",
+    "type": "composer-plugin",
+    "authors": [
+        {
+            "name": "libaro-io (Libaro)",
+            "email": "system@libaro.be"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Libaro\\QualityTools\\": "src/"
+        }
+    },
+    "require": {
+        "php": "^8.0",
+        "phpro/grumphp": "^1.15",
+        "composer-plugin-api": "~2.0"
+    },
+    "config": {
+        "allow-plugins": {
+            "phpro/grumphp": false
+        }
+    },
+    "extra": {
+        "class": "Libaro\\QualityTools\\Composer\\Extra"
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "echo aaa"
+        ]
+    },
+    "require-dev": {
+        "composer/composer": "^2.5"
+    }
+}
