@@ -24,12 +24,7 @@
         }
     },
     "extra": {
-        "class": "Libaro\\QualityTools\\Composer\\Extra"
-    },
-    "scripts": {
-        "post-install-cmd": [
-            "echo aaa"
-        ]
+        "class": "Libaro\\QualityTools\\Composer\\Plugin"
     },
     "require-dev": {
         "composer/composer": "^2.5"
