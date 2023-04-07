@@ -16,11 +16,17 @@
     "require": {
         "php": "^8.0",
         "phpro/grumphp": "^1.15",
-        "composer-plugin-api": "~2.0"
+        "composer-plugin-api": "~2.0",
+        "phpstan/extension-installer": "^1.2",
+        "spaze/phpstan-disallowed-calls": "^2.12",
+        "phpstan/phpstan": "^1.10",
+        "nunomaduro/larastan": "^2.0",
+        "maglnet/composer-require-checker": "^4.5"
     },
     "config": {
         "allow-plugins": {
-            "phpro/grumphp": false
+            "phpro/grumphp": false,
+            "phpstan/extension-installer": true
         }
     },
     "extra": {

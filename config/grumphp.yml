@@ -1,0 +1,35 @@
+grumphp:
+    hide_circumvention_tip: true
+    process_timeout: 60
+    ascii:
+        failed: grumphp-grumpy.txt
+        succeeded: grumphp-happy.txt
+    parallel:
+        enabled: true
+        max_workers: 32
+    fixer:
+        enabled: true
+        fix_by_default: true
+    tasks:
+        composer: ~
+#        composer_require_checker: ~ TODO - research how this works
+        git_blacklist:
+            keywords:
+                - "dd\\("
+                - "dump\\("
+            regexp_type: E
+            match_word: true
+        git_branch_name:
+            blacklist:
+                - "master"
+                - "develop"
+            allow_detached_head: false
+        git_commit_message:
+            enforce_capitalized_subject: true
+            enforce_no_subject_punctuations: true
+            max_subject_width: 72
+            matchers:
+                - /(Add|Doc|Fix|Move|Refactor|Remove|Revert|Update|Upgrade|Downgrade|WIP)*/
+        phpstan: ~
+    testsuites: []
+    extensions: []

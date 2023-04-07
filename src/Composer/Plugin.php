@@ -37,18 +37,28 @@ class Plugin implements PluginInterface, EventSubscriberInterface
         $vendorDir = $event->getComposer()->getConfig()->get('vendor-dir');
         $projectDir = realpath(dirname(rtrim($vendorDir)));
 
-        $targetFile = sprintf('%s/grumphp.yml', $projectDir);
+        $stubDir = realpath(__DIR__ . '/../../stubs');
 
-        if (file_exists($targetFile)) {
-            $event->getIO()->warning(
-                sprintf('We see you already have a grumphp.yml at "%s" file, we won\'t overwrite it.', $targetFile),
-            );
-            return;
+        $stubsToCopy = [
+            'grumphp.yml.stub' => 'grumphp.yml',
+            'phpstan.neon.stub' => 'phpstan.neon',
+        ];
+
+        foreach ($stubsToCopy as $stub => $target) {
+            $targetFile = sprintf('%s/%s', $projectDir, $target);
+
+            if (file_exists($targetFile)) {
+                $event->getIO()->warning(
+                    sprintf('We see you already have a "%s" at "%s" file, we won\'t overwrite it.', $target, $targetFile),
+                );
+
+                continue;
+            }
+
+            $sourceFile = sprintf('%s/%s', $stubDir, $stub);
+
+            copy($sourceFile, $targetFile);
         }
-
-        $sourceFile = realpath(__DIR__ . '/../../stubs/grumphp.yml.stub');
-
-        copy($sourceFile, $targetFile);
     }
 
     public function activate(Composer $composer, IOInterface $io)

@@ -1,0 +1,2 @@
+includes:
+    - ./vendor/libaro-io/quality-tools/config/phpstan.neon
