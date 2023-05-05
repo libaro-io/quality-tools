@@ -19,6 +19,8 @@ grumphp:
                 - "dump\\("
             regexp_type: E
             match_word: true
+            triggered_by:
+              - 'php'
         git_branch_name:
             blacklist:
                 - "master"
@@ -27,9 +29,43 @@ grumphp:
         git_commit_message:
             enforce_capitalized_subject: true
             enforce_no_subject_punctuations: true
+            max_body_width: 250
             max_subject_width: 72
             matchers:
                 - /(Add|Doc|Fix|Move|Refactor|Remove|Revert|Update|Upgrade|Downgrade|WIP)*/
-        phpstan: ~
+        yamllint: ~
+        xmllint: ~
+        jsonlint: ~
+        phplint: ~
+        phpcpd:
+          exclude:
+            - 'database/migrations'
+            - 'config/database.php'
+            - 'vendor'
+        phpstan:
+          memory_limit: '-1'
+        phpcs:
+          standard: 'phpcs.xml'
+          severity: 5
+          error_severity: 5
+          warning_severity: 5
+          encoding: utf-8
+          ignore_patterns:
+            - 'database/migrations'
+            - 'public/index'
+            - 'resources/views'
+            - 'resources/lang'
+            - 'routes'
+            - 'vendor'
+        phpmd:
+          exclude:
+            - 'database/migrations'
+            - 'tests'
+            - 'vendor'
+          ruleset:
+            - 'phpmd.xml'
+        securitychecker_enlightn:
+          lockfile: ./composer.lock
+          run_always: false
     testsuites: []
     extensions: []

@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<ruleset name="PHP_CodeSniffer">
+	<description>Coding standards for Libaro</description>
+	<!-- Include the whole PSR12 standard -->
+	<rule ref="PSR12"/>
+	<!-- Ensures doc blocks follow basic formatting -->
+	<rule ref="Generic.Commenting.DocComment">
+		<!-- Excluded because we like to use single-line doc-blocks for type hinting -->
+		<exclude name="Generic.Commenting.DocComment.ContentAfterOpen"/>
+		<exclude name="Generic.Commenting.DocComment.ContentBeforeClose"/>
+		<!-- Excluded because a short description isn't required for class properties -->
+		<exclude name="Generic.Commenting.DocComment.MissingShort"/>
+		<!-- Exclude indentation rule -->
+		<exclude name="Generic.Commenting.DocComment.TagValueIndent"/>
+	</rule>
+
+	<!-- Checks the spacing after a type cast -->
+	<rule ref="Generic.Formatting.SpaceAfterCast"/>
+
+	<rule ref="Squiz.Arrays"/>
+	<rule ref="Squiz.Arrays.ArrayDeclaration">
+		<!-- Disable some child rules that cause incorrect formatting. -->
+		<exclude name="Squiz.Arrays.ArrayDeclaration.CloseBraceNotAligned"/>
+		<exclude name="Squiz.Arrays.ArrayDeclaration.ValueNotAligned"/>
+		<exclude name="Squiz.Arrays.ArrayDeclaration.SingleLineNotAllowed"/>
+		<exclude name="Squiz.Arrays.ArrayDeclaration.KeyNotAligned"/>
+		<exclude name="Squiz.Arrays.ArrayDeclaration.DoubleArrowNotAligned"/>
+		<exclude name="Squiz.Arrays.ArrayDeclaration.MultiLineNotAllowed" />
+	</rule>
+
+	<!-- Verifies that block comments are used appropriately -->
+	<rule ref="Squiz.Commenting.BlockComment">
+		<!-- Excluded because we like to use single-line doc-blocks for type hinting -->
+		<exclude name="Squiz.Commenting.BlockComment.WrongStart"/>
+		<!-- Exclude indentation rules -->
+		<exclude name="Squiz.Commenting.BlockComment.FirstLineIndent"/>
+		<exclude name="Squiz.Commenting.BlockComment.LastLineIndent"/>
+		<exclude name="Squiz.Commenting.BlockComment.LineIndent"/>
+		<!-- Excluded because we do like an empty line before a block comment -->
+		<exclude name="Squiz.Commenting.BlockComment.HasEmptyLineBefore"/>
+	</rule>
+
+	<!-- Tests that the stars in a doc comment align correctly -->
+	<rule ref="Squiz.Commenting.DocCommentAlignment"/>
+
+	<!-- Checks for empty catch clause without a comment -->
+	<rule ref="Squiz.Commenting.EmptyCatchComment"/>
+
+	<!-- Verifies that a @throws tag exists for each exception type a function throws -->
+	<rule ref="Squiz.Commenting.FunctionCommentThrowTag"/>
+
+	<!-- Checks that there is adequate spacing between comments -->
+	<rule ref="Squiz.Commenting.InlineComment">
+		<!-- Excluded because we like to use inline doc-blocks -->
+		<exclude name="Squiz.Commenting.InlineComment.DocBlock"/>
+	</rule>
+
+	<!-- Parses and verifies the variable doc comment -->
+	<rule ref="Squiz.Commenting.VariableComment">
+		<!-- Excluded because we do not need block comments for class variables in php 7.4 -->
+		<exclude name="Squiz.Commenting.VariableComment.Missing"/>
+	</rule>
+</ruleset>

@@ -2,3 +2,6 @@ parameters:
     paths:
         - app/
     level: 5
+    bladestan:
+            template_paths:
+                - resources/views
