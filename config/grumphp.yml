@@ -32,7 +32,7 @@ grumphp:
             max_body_width: 250
             max_subject_width: 72
             matchers:
-                Prefix is required: /(Add|Doc|Fix|Move|Refactor|Remove|Revert|Update|Upgrade|Downgrade|WIP)+/
+                Prefix is required: /^(Add|Doc|Fix|Move|Refactor|Remove|Revert|Update|Upgrade|Downgrade|WIP)+/
         yamllint: ~
         xmllint: ~
         jsonlint: ~
