@@ -40,7 +40,8 @@ grumphp:
         phpstan:
           memory_limit: '-1'
         phpcs:
-          standard: 'phpcs.xml'
+          standard:
+            - 'vendor/libaro-io/quality-tools/config/phpcs.xml'
           severity: 5
           error_severity: 5
           warning_severity: 5
@@ -58,7 +59,7 @@ grumphp:
             - 'tests'
             - 'vendor'
           ruleset:
-            - 'phpmd.xml'
+            - 'vendor/libaro-io/quality-tools/config/phpmd.xml'
         securitychecker_enlightn:
           lockfile: ./composer.lock
           run_always: false
