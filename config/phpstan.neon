@@ -1,7 +1,10 @@
 parameters:
     paths:
         - app/
-    level: 5
+    level: 5,
+    parameters:
+		parallel:
+			processTimeout: 300.0
     bladestan:
             template_paths:
                 - resources/views
