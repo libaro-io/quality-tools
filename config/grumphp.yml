@@ -37,11 +37,6 @@ grumphp:
         xmllint: ~
         jsonlint: ~
         phplint: ~
-        phpcpd:
-          exclude:
-            - 'database/migrations'
-            - 'config/database.php'
-            - 'vendor'
         phpstan:
           memory_limit: '-1'
         phpcs:
