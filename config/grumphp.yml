@@ -53,11 +53,17 @@ grumphp:
             - 'resources/lang'
             - 'routes'
             - 'vendor'
+            - '_ide_helper.php'
+            - '_ide_helper_models.php'
+            - '.phpstorm.meta.php'
         phpmd:
           exclude:
             - 'database/migrations'
             - 'tests'
             - 'vendor'
+            - '_ide_helper.php'
+            - '_ide_helper_models.php'
+            - '.phpstorm.meta.php'
           ruleset:
             - 'vendor/libaro-io/quality-tools/config/phpmd.xml'
         securitychecker_enlightn:
