@@ -1,6 +1,6 @@
 grumphp:
     hide_circumvention_tip: true
-    process_timeout: 60
+    process_timeout: 300
     ascii:
         failed: grumphp-grumpy.txt
         succeeded: grumphp-happy.txt
