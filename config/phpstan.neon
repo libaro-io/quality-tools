@@ -2,13 +2,12 @@ parameters:
     paths:
         - app/
     level: 5
-    parameters:
-        parallel:
-            processTimeout: 300.0
-        excludePaths:
-            - _ide_helper.php
-            - _ide_helper_models.php
-            - .phpstorm.meta.php
+    parallel:
+        processTimeout: 300.0
+    excludePaths:
+        - _ide_helper.php
+        - _ide_helper_models.php
+        - .phpstorm.meta.php
     bladestan:
             template_paths:
                 - resources/views
