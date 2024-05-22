@@ -1,10 +1,10 @@
 {
-    "name": "libaro-io/quality-tools",
+    "name": "libaro/quality-tools",
     "description": "Libaro quality :D",
     "type": "composer-plugin",
     "authors": [
         {
-            "name": "libaro-io (Libaro)",
+            "name": "libaro (Libaro)",
             "email": "system@libaro.be"
         }
     ],
